@@ -1,0 +1,69 @@
+.story {
+  &__img--1 {
+    width: 100%;
+    grid-column: col-start 2 / col-end 5;
+    grid-row: 2 / 6;
+
+    @media screen and (max-width:$bp-medium) {
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__img--2 {
+    width: 115%;
+    grid-column: col-start 4 / 7;
+    grid-row: row-start 4 / 6;
+    z-index: 10;
+
+    @media screen and (max-width:$bp-medium) {
+      grid-column: 4 / 6;
+      grid-row: 3 / 5;
+    }
+  }
+
+  &__pictures {
+    background-image: linear-gradient(rgba($color-primary,0.5), rgba($color-primary,0.5)), url(../img/back.jpg);
+    background-size: cover;
+    grid-column: full-start / col-end 4;
+
+    display: grid;
+    grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+    grid-template-rows: repeat(6, [row-start] 1fr [row-end]);
+    align-items: center;
+
+    @media screen and (max-width: $bp-medium) {
+      grid-column: full-start / full-end;
+    }
+
+  }
+
+  &__content {
+    background-color: $color-grey-light-1;
+    grid-column: col-start 5 / full-end;
+
+    padding: 6rem 8vw;
+
+    //using flexbox because it is single dimensional
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: start;
+
+    //to do it using grid
+    display: grid;
+    align-content: center;
+    justify-items: start;
+
+    @media screen and (max-width: $bp-medium) {
+      grid-column: full-start / full-end;
+      grid-row: 5 / 6;
+    }
+
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 4rem;
+  }
+}
